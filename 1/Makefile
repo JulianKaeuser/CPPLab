@@ -1,6 +1,8 @@
+.PHONY: clean All
 
-ifndef EXERCISES_ROOT
-$(error EXERCISES_ROOT not defined!)
-endif
-
-include $(EXERCISES_ROOT)/cpp.mk
+All:
+	@echo "----------Building project:[ 1 - Debug ]----------"
+	@"$(MAKE)" -f  "1.mk"
+clean:
+	@echo "----------Cleaning project:[ 1 - Debug ]----------"
+	@"$(MAKE)" -f  "1.mk" clean
