@@ -125,4 +125,19 @@ void printElements3 (const int * const begin, const int * const end){
 	}
 	
 }
+
+int* findArrayPtr(size_t * const sizeP){
+	size_t size = 0;
+	while (size<1){
+     std::cout << "Size" << std::endl;
+	 std::cin >> size;
+    }
+	int *arrayPtr = new int[size];
+	for (int ii=0; ii<size; ii++){
+		std::cout << "number " << ii << "please:" << std::endl;
+		std::cin >> arrayPtr[ii];
+	}
+	*sizeP = size;
+	return arrayPtr;
+}
 };

@@ -4,6 +4,7 @@
 #include "CharGenerator.h"
 #include "PatternPrinter.h"
 #include "Vector3.h"
+#include "List.h"
 
 using namespace std;
 
@@ -49,11 +50,34 @@ cout << "/A6-4"<< endl;
 
 // A6.5)
 cout << "A6-5" << endl;
-fun::printElements3(array-3, array+d);
+fun::printElements3(array+3, array+d-2);
 cout << "/A6-5"<< endl;
+
+// A6.6)
+cout << "A6-6" << endl;
+size_t dynSize;
+size_t * const sizeP = &dynSize;
+//int *dynPtr = fun::findArrayPtr(sizeP);
+
+//fun::printElements(dynPtr, dynSize);
+
+
+cout << "/A6-6"<< endl;
 	
 	
-	
+//A7)
+
+//A7.4)
+cout << "A7-4"<<endl;
+List *list = new List();
+cout << list->getSize() << endl;
+
+list->appendElement(5);
+
+List list2 = *list;
+List &l = list2;
+cout << l <<endl;
+cout << "/A7-4" << endl;
 	
 	
 	

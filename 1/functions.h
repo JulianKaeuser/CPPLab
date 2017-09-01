@@ -74,6 +74,7 @@ void printElements2 (const int * const array, const size_t size);
 
 void printElements3 (const int * const begin, const int * const end); 
 
+int* findArrayPtr(size_t * const sizeP);
 };
 
 

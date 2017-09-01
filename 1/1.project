@@ -67,5 +67,9 @@
     <File Name="Vector3.cpp"/>
     <File Name="Arrays.h"/>
     <File Name="Arrays.cpp"/>
+    <File Name="ListItem.h"/>
+    <File Name="ListItem.cpp"/>
+    <File Name="List.h"/>
+    <File Name="List.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

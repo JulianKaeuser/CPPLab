@@ -61,7 +61,7 @@ AS       := as
 ##
 CodeLiteDir:=/usr/share/codelite
 EXERCISES_ROOT:=/home/cppp/Repos/tud-cppp/exercises
-Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) 
 
 
 
@@ -139,6 +139,22 @@ $(IntermediateDirectory)/Arrays.cpp$(DependSuffix): Arrays.cpp
 
 $(IntermediateDirectory)/Arrays.cpp$(PreprocessSuffix): Arrays.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Arrays.cpp$(PreprocessSuffix) Arrays.cpp
+
+$(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix): ListItem.cpp $(IntermediateDirectory)/ListItem.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPLab/1/ListItem.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/ListItem.cpp$(DependSuffix): ListItem.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/ListItem.cpp$(DependSuffix) -MM ListItem.cpp
+
+$(IntermediateDirectory)/ListItem.cpp$(PreprocessSuffix): ListItem.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/ListItem.cpp$(PreprocessSuffix) ListItem.cpp
+
+$(IntermediateDirectory)/List.cpp$(ObjectSuffix): List.cpp $(IntermediateDirectory)/List.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPLab/1/List.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/List.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/List.cpp$(DependSuffix): List.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/List.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/List.cpp$(DependSuffix) -MM List.cpp
+
+$(IntermediateDirectory)/List.cpp$(PreprocessSuffix): List.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/List.cpp$(PreprocessSuffix) List.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
