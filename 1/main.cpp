@@ -3,11 +3,107 @@
 #include "functions.h"
 #include "CharGenerator.h"
 #include "PatternPrinter.h"
+#include "Vector3.h"
+
+using namespace std;
 
 
+void foo(int &i) {
+int i2 = i;
+int &i3 = i;
+std::cout << "i = " << i << std::endl;
+std::cout << "i2 = " << i2 << std::endl;
+std::cout << "i3 = " << i3 << std::endl;
+std::cout << "&i = " << &i << std::endl;
+std::cout << "&i2 = " << &i2 << std::endl;
+std::cout << "&i3 = " << &i3 << std::endl;
+}
 
 
 int main() {
+	
+// A6)
+// A6.1
+cout << "A6-1" << endl;
+int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int d = sizeof(array)/sizeof(int);
+for (int ii = 0; ii<d; ii++){
+	//cout << *(array+ii) << endl;
+} 
+cout << "/A6-1"<< endl;
+
+// A6.2)
+cout << "A6-2" << endl;
+fun::printElements(array, d);
+cout << "/A6-2"<< endl;
+
+// A6.3)
+cout << "A6-3" << endl;
+fun::printElements2(array, d);
+cout << "/A6-3"<< endl;
+
+// A6.4)
+cout << "A6-4" << endl;
+fun::printElements3(array, array+d);
+cout << "/A6-4"<< endl;
+
+// A6.5)
+cout << "A6-5" << endl;
+fun::printElements3(array-3, array+d);
+cout << "/A6-5"<< endl;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	
+// A5)	
+int var = 42;
+cout << "&var = " << &var << endl;
+foo(var);
+
+	
+	
+int a = 1;
+int b = 2;
+
+
+fun::swap(a,b);
+
+
+cout << "Wert von a,b " << a << b << endl;
+cout << "Wert von &a,&b " << &a << &b << endl;
+
+int *aP = &a;
+int *bP = &b;	
+fun::swap(aP,bP);
+cout << "Wert von aP,bP " << aP << bP << endl;
+
+cout << "Wert von a,b " << a << b << endl;
+cout << "Wert von &a,&b " << &a << &b << endl;
+	
+	
+int intVal = 42;
+int *pIntVal = &intVal;
+
+
+
+cout << "Wert von IntVal " << intVal << endl;
+cout << "Wert von &IntVal " << &intVal << endl;
+cout << "Wert von pIntVal " << pIntVal << endl;
+cout << "Wert von *pIntVal " << *pIntVal << endl;
+cout << "Wert von &pIntVal " << &pIntVal << endl;
+	
+	
+	
+	
+	
+	
+/*	
 //std::cout << "Hello World" << std::endl; // prints "Hello World"
 std::cout << "int:" 	<< sizeof(int)	<< std::endl;
 std::cout << "uint:" 	<< sizeof(unsigned int)	<< std::endl;
@@ -19,19 +115,28 @@ std::cout << "lim uint:"	<< std::numeric_limits<unsigned int>::min() << "  " << 
 std::cout << "lim double:"	<< std::numeric_limits<double>::min() << "  " << std::numeric_limits<double>::max()	<< std::endl;
 std::cout << "lim ushort:"	<< std::numeric_limits<unsigned short>::min() << "  " << std::numeric_limits<unsigned short>::max()	<< std::endl;
 std::cout << "lim bool:"	<< std::numeric_limits<bool>::min() << "  " << std::numeric_limits<bool>::max()	<< std::endl;
+*/
 
+
+
+/*
 CharGenerator chargen;
 for (int ii = 0; ii<14; ii++){
 char next = chargen.generateNextChar();
 std::cout << next << std::endl;
 }
 
+Vector3 abc = Vector3(1,3,5);
+Vector3 abc2 = Vector3(2,4,6);
+
+
+std::cout << abc + abc2 <<std::endl;
 
 fun::printFigure();
 
 PatternPrinter patPrint;
 patPrint.printPattern();
-
+*/
 }
 
 

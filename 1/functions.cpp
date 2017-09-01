@@ -1,6 +1,7 @@
 #include "functions.h"
 #include <iostream>
 
+
 namespace fun{
 
 void printStars(int n){
@@ -84,4 +85,44 @@ void printChar(int n, char (*fptr)()){
 	std::cout << std::endl;
 	}
 
+void swap(int &a, int &b){
+	int c = a;
+	a = b;
+	b = c;
+	
+}
+
+void swap(int *a, int *b){
+	int c = *a;
+	          //std::cout << "c=" << c << std::endl;
+	          //std::cout << "b=" << b << std::endl;
+	          //std::cout << "a=" << a << std::endl;
+	*a = *b;
+	          //std::cout << "a=" << a << std::endl;
+	          //std::cout << "*a=" << *a << std::endl;
+	*b = c;
+	          //std::cout << "b=" << b << std::endl;
+}
+
+
+void printElements (const int * const array, const size_t size){
+	for (size_t ii=0; ii<size; ii++){
+		std::cout << *(array+ii) << std::endl;
+	}
+	
+}
+
+void printElements2 (const int * const array, const size_t size){
+	for (const int *p = array; p!=array+size; p++){
+		std::cout << *p << std::endl;
+	}
+	
+}
+
+void printElements3 (const int * const begin, const int * const end){
+	for (const int *p = begin; p!= end; p++){
+		std::cout << *p << std::endl;
+	}
+	
+}
 };

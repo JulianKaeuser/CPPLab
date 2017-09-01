@@ -65,5 +65,7 @@
     <File Name="CharGenerator.cpp"/>
     <File Name="Vector3.h"/>
     <File Name="Vector3.cpp"/>
+    <File Name="Arrays.h"/>
+    <File Name="Arrays.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

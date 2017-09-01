@@ -1,5 +1,6 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
+#include <iostream>
 
 class Vector3
 {
@@ -14,6 +15,10 @@ public:
 	double operator*(Vector3 rhs); // dot product of wo vectors, scalar product
 private:
 double a, b, c;
+
+friend std::ostream& operator<<(std::ostream&, Vector3);
 };
+
+std::ostream& operator<<(std::ostream &out, Vector3 rhs);
 
 #endif // VECTOR3_H

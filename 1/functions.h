@@ -1,6 +1,8 @@
 #ifndef FUNCTIONS_HPP_
 #define FUNCTIONS_HPP_
 
+#include <cstddef>
+
 namespace fun {
 /**
 * @file functions.h
@@ -61,6 +63,17 @@ char nextChar();
 void printChar(int n);
 
 void printChar(int n, void (*fptr));
+
+void swap(int &a, int &b);
+
+void swap (int *a, int *b);
+
+void printElements (const int * const array, const size_t size); 
+
+void printElements2 (const int * const array, const size_t size); 
+
+void printElements3 (const int * const begin, const int * const end); 
+
 };
 
 

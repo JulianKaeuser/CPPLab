@@ -1,1 +1,1 @@
-./Debug/PatternPrinter.cpp.o ./Debug/functions.cpp.o ./Debug/main.cpp.o ./Debug/CharGenerator.cpp.o ./Debug/Vector3.cpp.o
+./Debug/PatternPrinter.cpp.o ./Debug/functions.cpp.o ./Debug/main.cpp.o ./Debug/CharGenerator.cpp.o ./Debug/Vector3.cpp.o ./Debug/Arrays.cpp.o

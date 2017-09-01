@@ -20,6 +20,7 @@ Vector3::Vector3(const Vector3 &other){
 
 Vector3::~Vector3()
 {
+  std::cout << "deleting vector" << std::endl;
 }
 
 Vector3 Vector3::operator+(Vector3 rhs){
@@ -36,4 +37,11 @@ Vector3 Vector3::operator-(Vector3 rhs){
 double Vector3::operator*(Vector3 rhs){
 	return a*rhs.a+b*rhs.b+c*rhs.c;
 }; 
+
+std::ostream& operator<<(std::ostream &out, Vector3 rhs) {
+out << rhs.a << rhs.b << rhs.c ;
+return out;
+};
+
+
 
