@@ -12,8 +12,8 @@ List::~List()
 }
 
 List::List(const List &other){
-	this->currentSize = other.getSize();
-	for (ListItem * ii= other.first; ii!=0; ii+=sizeof(ListItem)){
+	
+	for (ListItem * ii= other.first; ii!=0; ii=ii->getNext()){
 		this->appendElement(ii->getContent());
 	}
 }
@@ -23,12 +23,16 @@ void List::appendElement (int i){
 	currentSize++;
 	ListItem *it;
 	std::cout << last << std::endl;
-	it = new ListItem(0, 0, i);
+	it = new ListItem(last, 0, i);
+	std::cout << "it:" << it->getContent() << std::endl;
 	last = it;
+	
 	if (first==0){
 		first = it;
 		last = it;
 	}
+	std::cout << "last: " <<last << " - " <<last->getContent() << std::endl;
+	std::cout << "first:" <<first << " - " <<first->getContent() << std::endl;
 }
 
 void List::prependElement(int i){
@@ -43,14 +47,22 @@ void List::prependElement(int i){
 }
 
 void List::insertElementAt(int i, size_t pos){
-	currentSize++;
-	ListItem *it;
-	ListItem *nth = getElementAt(pos);
-	it = new ListItem(nth, nth->getNext(),i);
-	if(currentSize==1){
-		first = it;
-		last = it;
+	if(pos == 0){
+		prependElement(i);
+	}else if(pos >= getSize()){
+		appendElement(i);
+		
+	}else{
+		ListItem *it;
+		ListItem *nth = getElementAt(pos-1);
+		it = new ListItem(nth, nth->getNext(),i);
+		if(currentSize==0){
+			first = it;
+			last = it;
+		}
 	}
+	currentSize++;
+	
 	
 }
 
@@ -59,6 +71,12 @@ size_t List::getSize() const{
 }
 
 int & List::getNthElement(size_t n){
+	if (n==0){
+		return getFirst();
+	}
+	else if (n>=getSize()){
+		return getLast();
+	}
 	return getElementAt(n)->getContent();
 }
 
@@ -86,8 +104,10 @@ int List::deleteFirst(){
 int List::deleteLast(){
 	ListItem *nextLast = last->getPrevious();
 	int cont = last->getContent();
-	delete last;
+	ListItem *toDelete = last;
+	delete toDelete;
 	last = nextLast;
+	//nextlast
 	currentSize--;
 	if (currentSize==0){
 		first = 0;
@@ -97,8 +117,16 @@ int List::deleteLast(){
 }
 
 int List::deleteAt(size_t pos){
+	int cont;
+	if (pos == 0){
+		deleteFirst();
+	}
+	else if (pos >= getSize()){
+		deleteLast();
+	}
+	else {
 	ListItem *elem = getElementAt(pos);
-	int cont = elem->getContent();
+	 cont = elem->getContent();
 	if (elem == last){
 		last = elem->getPrevious();
 	}
@@ -106,11 +134,13 @@ int List::deleteAt(size_t pos){
 		first = elem->getNext();
 	}
 	delete elem;
-	currentSize--;
-	if (currentSize==0){
+	
+	if (currentSize==1){
 		first = 0;
 		last  = 0;
 	}
+	}
+	currentSize--;
 	return cont;
 	
 }
@@ -125,10 +155,19 @@ ListItem* List::getElementAt(size_t pos){
 }
 
 std::ostream &operator<<(std::ostream &stream, List &list){
-    stream << "apenis";
-	//for (ListItem *ii = list.first; ii!=0; ii+=sizeof(ListItem)){
-	//	int c = ii->getContent();
-	//	stream << c << " ";
-	//}
+
+	for (ListItem *ii = list.first; ii!=0; ii=ii->getNext()){
+		int c = ii->getContent();
+		std::cout << c << std::endl;
+	}
+	/*
+	ListItem *ii = list.first;
+	do {
+		int c = ii->getContent();
+		std::cout << c << std::endl;
+		stream << c << " ";
+		ii+=sizeof(ListItem);
+	} while (ii!=list.last);
+	*/
 	return stream;
 }

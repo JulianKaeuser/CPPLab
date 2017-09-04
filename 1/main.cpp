@@ -73,10 +73,25 @@ List *list = new List();
 cout << list->getSize() << endl;
 
 list->appendElement(5);
+list->prependElement(17);
+list->insertElementAt(14, 2);
+cout << *list <<endl;
+//list->deleteFirst();
+cout << list->getNthElement(0) << endl;
+cout << list->getNthElement(1) << endl;
+cout << list->getNthElement(2) << endl;
+cout << list->getNthElement(14) << endl;
+//list->deleteLast();
+list->deleteAt(37);
+//list->prependElement(42);
+//list->appendElement(42);
 
-List list2 = *list;
-List &l = list2;
-cout << l <<endl;
+cout << list->getSize() << endl;
+cout << "copying list " <<endl << endl;
+
+List *list2 = new List(*list);
+
+cout << *list2 <<endl;
 cout << "/A7-4" << endl;
 	
 	

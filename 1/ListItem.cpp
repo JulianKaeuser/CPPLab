@@ -17,8 +17,13 @@ next(next)
 
 ListItem::~ListItem()
 {
-	previous->next = next;
-	next->previous = previous;
+	if (previous !=0){
+	  previous->next = next;
+	}
+	
+	if (next!=0){
+	  next->previous = previous;
+	}
 	std::cout << "deconstructing ListItem with content"
 	          << content << std::endl;
 }
