@@ -5,7 +5,7 @@
 #include "PatternPrinter.h"
 #include "Vector3.h"
 #include "List.h"
-
+#include "TreeNode.h"
 using namespace std;
 
 
@@ -22,7 +22,7 @@ std::cout << "&i3 = " << &i3 << std::endl;
 
 
 int main() {
-	
+/*	
 // A6)
 // A6.1
 cout << "A6-1" << endl;
@@ -66,7 +66,7 @@ cout << "/A6-6"<< endl;
 	
 	
 //A7)
-
+/*
 //A7.4)
 cout << "A7-4"<<endl;
 List *list = new List();
@@ -101,9 +101,17 @@ for (ListIterator iter = list2->begin(); iter!=list2->end(); iter++){
 	cout << *iter << endl;
 }
 cout << "/A7-4" << endl;
-	
-	
-	
+*/	
+
+// A8)
+
+// A8-2)
+cout<< "A8-1" << endl;
+TreeNodePtr node = TreeNode::createNode(1, TreeNode::createNode(2), TreeNode::createNode(3));
+cout << "new tree " << endl;
+node = TreeNode::createNode(4, TreeNode::createNode(5), TreeNode::createNode(6));
+
+cout << "/A8-1" << endl;	
 	
 	
 	

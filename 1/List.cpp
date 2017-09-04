@@ -174,11 +174,11 @@ std::ostream &operator<<(std::ostream &stream, List &list){
 }
 
 ListIterator List::begin(){
-	return *(new ListIterator(this, first));
+	return  ListIterator(this, first);
 	
 }
 
 ListIterator List::end(){
-	return *(new ListIterator(this, last));
+	return  ListIterator(this, last);
 	
 }

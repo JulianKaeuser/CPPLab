@@ -50,7 +50,7 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch). $(LibraryP
 AR       := ar rcus
 CXX      := g++
 CC       := gcc
-CXXFLAGS :=  -g -Wall $(Preprocessors)
+CXXFLAGS :=  -g -Wall -std=c++11 $(Preprocessors)
 CFLAGS   :=   $(Preprocessors)
 ASFLAGS  := 
 AS       := as
@@ -61,7 +61,8 @@ AS       := as
 ##
 CodeLiteDir:=/usr/share/codelite
 EXERCISES_ROOT:=/home/cppp/Repos/tud-cppp/exercises
-Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) $(IntermediateDirectory)/TreeNode.cpp$(ObjectSuffix) \
+	
 
 
 
@@ -163,6 +164,14 @@ $(IntermediateDirectory)/ListIterator.cpp$(DependSuffix): ListIterator.cpp
 
 $(IntermediateDirectory)/ListIterator.cpp$(PreprocessSuffix): ListIterator.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/ListIterator.cpp$(PreprocessSuffix) ListIterator.cpp
+
+$(IntermediateDirectory)/TreeNode.cpp$(ObjectSuffix): TreeNode.cpp $(IntermediateDirectory)/TreeNode.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/TreeNode.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/TreeNode.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/TreeNode.cpp$(DependSuffix): TreeNode.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/TreeNode.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/TreeNode.cpp$(DependSuffix) -MM TreeNode.cpp
+
+$(IntermediateDirectory)/TreeNode.cpp$(PreprocessSuffix): TreeNode.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/TreeNode.cpp$(PreprocessSuffix) TreeNode.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

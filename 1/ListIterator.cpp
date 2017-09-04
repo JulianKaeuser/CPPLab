@@ -18,7 +18,7 @@ int& ListIterator::operator*(){
 }
 
 bool ListIterator::operator!=(const ListIterator &other) const{
-	if (other.list != list && other.item!=item){
+	if ((other.list != list) || (other.item!=item)){
 		return 1;
 	}
 	return 0;
