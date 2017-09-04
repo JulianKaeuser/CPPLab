@@ -61,7 +61,7 @@ AS       := as
 ##
 CodeLiteDir:=/usr/share/codelite
 EXERCISES_ROOT:=/home/cppp/Repos/tud-cppp/exercises
-Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) 
 
 
 
@@ -155,6 +155,14 @@ $(IntermediateDirectory)/List.cpp$(DependSuffix): List.cpp
 
 $(IntermediateDirectory)/List.cpp$(PreprocessSuffix): List.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/List.cpp$(PreprocessSuffix) List.cpp
+
+$(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix): ListIterator.cpp $(IntermediateDirectory)/ListIterator.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/ListIterator.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/ListIterator.cpp$(DependSuffix): ListIterator.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/ListIterator.cpp$(DependSuffix) -MM ListIterator.cpp
+
+$(IntermediateDirectory)/ListIterator.cpp$(PreprocessSuffix): ListIterator.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/ListIterator.cpp$(PreprocessSuffix) ListIterator.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

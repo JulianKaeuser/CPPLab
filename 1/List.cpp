@@ -1,5 +1,6 @@
 #include "List.h"
 
+
 List::List()
 {
 	currentSize = 0;
@@ -170,4 +171,14 @@ std::ostream &operator<<(std::ostream &stream, List &list){
 	} while (ii!=list.last);
 	*/
 	return stream;
+}
+
+ListIterator List::begin(){
+	return *(new ListIterator(this, first));
+	
+}
+
+ListIterator List::end(){
+	return *(new ListIterator(this, last));
+	
 }

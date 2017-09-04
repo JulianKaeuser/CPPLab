@@ -92,6 +92,14 @@ cout << "copying list " <<endl << endl;
 List *list2 = new List(*list);
 
 cout << *list2 <<endl;
+for (int ii=0; ii<15; ii++){
+	list2->appendElement(ii*2);
+}
+
+cout << "with iterator " <<endl;
+for (ListIterator iter = list2->begin(); iter!=list2->end(); iter++){
+	cout << *iter << endl;
+}
 cout << "/A7-4" << endl;
 	
 	

@@ -4,8 +4,11 @@
 #include <iostream>
 #include "ListItem.h"
 #include <cstddef>
+#include "ListIterator.h"
 class List
 {
+friend class ListIterator;	
+
 public:
 	List();
 	~List();
@@ -20,6 +23,8 @@ public:
 	int deleteFirst();
 	int deleteLast();
 	int deleteAt(size_t pos);
+	ListIterator begin();
+	ListIterator end();
 private:
    ListItem *first;
    ListItem *last;

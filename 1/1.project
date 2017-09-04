@@ -71,5 +71,7 @@
     <File Name="ListItem.cpp"/>
     <File Name="List.h"/>
     <File Name="List.cpp"/>
+    <File Name="ListIterator.h"/>
+    <File Name="ListIterator.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
