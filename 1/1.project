@@ -22,6 +22,20 @@
     <File Name="ListIterator.cpp"/>
     <File Name="TreeNode.h"/>
     <File Name="TreeNode.cpp"/>
+    <File Name="Person.h"/>
+    <File Name="Person.cpp"/>
+    <File Name="Student.h"/>
+    <File Name="Student.cpp"/>
+    <File Name="Expression.h"/>
+    <File Name="Expression.cpp"/>
+    <File Name="NumberExpression.h"/>
+    <File Name="NumberExpression.cpp"/>
+    <File Name="BinaryExpression.h"/>
+    <File Name="BinaryExpression.cpp"/>
+    <File Name="PlusExpression.h"/>
+    <File Name="PlusExpression.cpp"/>
+    <File Name="MinusExpression.h"/>
+    <File Name="MinusExpression.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

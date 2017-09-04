@@ -62,7 +62,7 @@ AS       := as
 CodeLiteDir:=/usr/share/codelite
 EXERCISES_ROOT:=/home/cppp/Repos/tud-cppp/exercises
 Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) $(IntermediateDirectory)/TreeNode.cpp$(ObjectSuffix) \
-	
+	$(IntermediateDirectory)/Person.cpp$(ObjectSuffix) $(IntermediateDirectory)/Student.cpp$(ObjectSuffix) $(IntermediateDirectory)/Expression.cpp$(ObjectSuffix) $(IntermediateDirectory)/NumberExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/BinaryExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/PlusExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/MinusExpression.cpp$(ObjectSuffix) 
 
 
 
@@ -172,6 +172,62 @@ $(IntermediateDirectory)/TreeNode.cpp$(DependSuffix): TreeNode.cpp
 
 $(IntermediateDirectory)/TreeNode.cpp$(PreprocessSuffix): TreeNode.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/TreeNode.cpp$(PreprocessSuffix) TreeNode.cpp
+
+$(IntermediateDirectory)/Person.cpp$(ObjectSuffix): Person.cpp $(IntermediateDirectory)/Person.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/Person.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Person.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Person.cpp$(DependSuffix): Person.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Person.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Person.cpp$(DependSuffix) -MM Person.cpp
+
+$(IntermediateDirectory)/Person.cpp$(PreprocessSuffix): Person.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Person.cpp$(PreprocessSuffix) Person.cpp
+
+$(IntermediateDirectory)/Student.cpp$(ObjectSuffix): Student.cpp $(IntermediateDirectory)/Student.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/Student.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Student.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Student.cpp$(DependSuffix): Student.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Student.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Student.cpp$(DependSuffix) -MM Student.cpp
+
+$(IntermediateDirectory)/Student.cpp$(PreprocessSuffix): Student.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Student.cpp$(PreprocessSuffix) Student.cpp
+
+$(IntermediateDirectory)/Expression.cpp$(ObjectSuffix): Expression.cpp $(IntermediateDirectory)/Expression.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/Expression.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Expression.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Expression.cpp$(DependSuffix): Expression.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Expression.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Expression.cpp$(DependSuffix) -MM Expression.cpp
+
+$(IntermediateDirectory)/Expression.cpp$(PreprocessSuffix): Expression.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Expression.cpp$(PreprocessSuffix) Expression.cpp
+
+$(IntermediateDirectory)/NumberExpression.cpp$(ObjectSuffix): NumberExpression.cpp $(IntermediateDirectory)/NumberExpression.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/NumberExpression.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NumberExpression.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/NumberExpression.cpp$(DependSuffix): NumberExpression.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/NumberExpression.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/NumberExpression.cpp$(DependSuffix) -MM NumberExpression.cpp
+
+$(IntermediateDirectory)/NumberExpression.cpp$(PreprocessSuffix): NumberExpression.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/NumberExpression.cpp$(PreprocessSuffix) NumberExpression.cpp
+
+$(IntermediateDirectory)/BinaryExpression.cpp$(ObjectSuffix): BinaryExpression.cpp $(IntermediateDirectory)/BinaryExpression.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/BinaryExpression.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/BinaryExpression.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/BinaryExpression.cpp$(DependSuffix): BinaryExpression.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/BinaryExpression.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/BinaryExpression.cpp$(DependSuffix) -MM BinaryExpression.cpp
+
+$(IntermediateDirectory)/BinaryExpression.cpp$(PreprocessSuffix): BinaryExpression.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/BinaryExpression.cpp$(PreprocessSuffix) BinaryExpression.cpp
+
+$(IntermediateDirectory)/PlusExpression.cpp$(ObjectSuffix): PlusExpression.cpp $(IntermediateDirectory)/PlusExpression.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/PlusExpression.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/PlusExpression.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/PlusExpression.cpp$(DependSuffix): PlusExpression.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/PlusExpression.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/PlusExpression.cpp$(DependSuffix) -MM PlusExpression.cpp
+
+$(IntermediateDirectory)/PlusExpression.cpp$(PreprocessSuffix): PlusExpression.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/PlusExpression.cpp$(PreprocessSuffix) PlusExpression.cpp
+
+$(IntermediateDirectory)/MinusExpression.cpp$(ObjectSuffix): MinusExpression.cpp $(IntermediateDirectory)/MinusExpression.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/MinusExpression.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/MinusExpression.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/MinusExpression.cpp$(DependSuffix): MinusExpression.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/MinusExpression.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/MinusExpression.cpp$(DependSuffix) -MM MinusExpression.cpp
+
+$(IntermediateDirectory)/MinusExpression.cpp$(PreprocessSuffix): MinusExpression.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/MinusExpression.cpp$(PreprocessSuffix) MinusExpression.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

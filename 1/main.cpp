@@ -6,6 +6,12 @@
 #include "Vector3.h"
 #include "List.h"
 #include "TreeNode.h"
+#include "Person.h"
+#include "Student.h"
+#include <string>
+#include "NumberExpression.h"
+#include "PlusExpression.h"
+#include "MinusExpression.h"
 using namespace std;
 
 
@@ -20,6 +26,9 @@ std::cout << "&i2 = " << &i2 << std::endl;
 std::cout << "&i3 = " << &i3 << std::endl;
 }
 
+void printPersonInfo(const Person *person){
+	cout << person->getInfo() << endl;
+}
 
 int main() {
 /*	
@@ -106,13 +115,70 @@ cout << "/A7-4" << endl;
 // A8)
 
 // A8-2)
+/*
 cout<< "A8-1" << endl;
 TreeNodePtr node = TreeNode::createNode(1, TreeNode::createNode(2), TreeNode::createNode(3));
 cout << "new tree " << endl;
 node = TreeNode::createNode(4, TreeNode::createNode(5), TreeNode::createNode(6));
 
 cout << "/A8-1" << endl;	
-	
+*/
+
+//A9)
+//A9-3)
+/*
+cout << "A9-3" << endl;
+string personName = string("Alfons");
+string studentName = string("Peter");
+string studentID = string("1234567");
+Person *p = new Person(personName);
+Person *s = new Student(studentName, studentID);
+Student *st = new Student(studentName, studentID);
+
+//cout << p->getInfo() << endl;
+//cout << s->getInfo() << endl;
+//cout << st->getInfo()<< endl;
+printPersonInfo(p);
+printPersonInfo(s);
+printPersonInfo(st);
+
+delete p;
+delete s;
+delete st;
+cout << "/A9-3" << endl;
+ * */
+//
+
+// A10
+
+// A10-1e)
+cout << "A10-1" << endl;
+NumberExpression *two = new NumberExpression(2.0);
+ExpressionPtr twoPtr = two->createExpression(*two);
+
+NumberExpression *three = new NumberExpression(3.0);
+ExpressionPtr threePtr = three->createExpression(*three);
+
+PlusExpression *p3 = new PlusExpression(threePtr,threePtr);
+ExpressionPtr p3Ptr = p3->createExpression(*p3);
+
+MinusExpression *m2 = new MinusExpression(twoPtr, twoPtr);
+ExpressionPtr m2Ptr = m2->createExpression(*m2);
+
+PlusExpression *p2 = new PlusExpression(twoPtr,threePtr);
+ExpressionPtr p2Ptr = p2->createExpression(*p2);
+
+PlusExpression *p1 = new PlusExpression(p2Ptr,m2Ptr);
+ExpressionPtr p1Ptr = p1->createExpression(*p1);
+
+MinusExpression *m1 = new MinusExpression(p2Ptr, p3Ptr);
+ExpressionPtr m1Ptr = m1->createExpression(*m1);
+
+cout << m1->compute() << endl;
+
+
+
+cout << "/A10-1" << endl;
 	
 	
 /*	
