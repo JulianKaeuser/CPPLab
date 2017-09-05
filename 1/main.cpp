@@ -12,6 +12,10 @@
 #include "NumberExpression.h"
 #include "PlusExpression.h"
 #include "MinusExpression.h"
+#include "StudentAssistant.h"
+#include "C.h"
+#include "maximum.h"
+#include "C2.h"
 using namespace std;
 
 
@@ -147,9 +151,9 @@ delete s;
 delete st;
 cout << "/A9-3" << endl;
  * */
-//
 
 // A10
+/* 
 
 // A10-1e)
 cout << "A10-1" << endl;
@@ -160,29 +164,79 @@ NumberExpression *three = new NumberExpression(3.0);
 ExpressionPtr threePtr = three->createExpression(*three);
 
 PlusExpression *p3 = new PlusExpression(threePtr,threePtr);
-ExpressionPtr p3Ptr = p3->createExpression(*p3);
+ExpressionPtr p1Ptr = p3->createExpression(*p3);
 
 MinusExpression *m2 = new MinusExpression(twoPtr, twoPtr);
 ExpressionPtr m2Ptr = m2->createExpression(*m2);
 
-PlusExpression *p2 = new PlusExpression(twoPtr,threePtr);
+PlusExpression *p2 = new PlusExpression(threePtr,threePtr);
 ExpressionPtr p2Ptr = p2->createExpression(*p2);
 
 PlusExpression *p1 = new PlusExpression(p2Ptr,m2Ptr);
 ExpressionPtr p1Ptr = p1->createExpression(*p1);
 
-MinusExpression *m1 = new MinusExpression(p2Ptr, p3Ptr);
+MinusExpression *m1 = new MinusExpression(p2Ptr, twoPtr);
 ExpressionPtr m1Ptr = m1->createExpression(*m1);
-
-cout << m1->compute() << endl;
 
 
 
 cout << "/A10-1" << endl;
+*/	
 	
+// A11
+/*
+//A11.3
+string name = "Peter";
+string ID = "333";
+string boss = "Enis";
+StudentAssistant *ahole = new StudentAssistant(name, ID, boss);
+std::cout << "STInf: " << ahole->getInfo() << std::endl;
+*/
+
+//A12
+/*
+// A12-2
+cout << "A12-2" << endl;
+try{
+	throw C();
+}
+catch (C &c){
+	cout << "catchign by reference" << endl;
+	cout << c.name << endl;
+}
+catch (C c){
+	cout << "catchign by value" << endl;
+	cout << c.name << endl;
+}
+
+List *list = new List();
+for (int ii=0; ii<10; ii++){
+	list->appendElement(ii*2);
+}
+try {
+	list->deleteAt(15);
+}
+catch(const std::out_of_range &c){
+	cout << c.what()<<endl;
+}
+
+
+cout << "/A12-2" << endl;
+*/
+
+//A13
+C2 a(5);
+//
+C2 b(7);
+//short int b = 7;
+C2 d = maximum(a, b);
+int c = d.getNumber();
+cout << "max:" << c<< endl;
+
+
 	
-/*	
 // A5)	
+/*
 int var = 42;
 cout << "&var = " << &var << endl;
 foo(var);

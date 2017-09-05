@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=
-Date                   :=04/09/17
+Date                   :=05/09/17
 CodeLitePath           :=/home/cppp/.codelite
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC
@@ -62,7 +62,8 @@ AS       := as
 CodeLiteDir:=/usr/share/codelite
 EXERCISES_ROOT:=/home/cppp/Repos/tud-cppp/exercises
 Objects0=$(IntermediateDirectory)/PatternPrinter.cpp$(ObjectSuffix) $(IntermediateDirectory)/functions.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CharGenerator.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vector3.cpp$(ObjectSuffix) $(IntermediateDirectory)/Arrays.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListItem.cpp$(ObjectSuffix) $(IntermediateDirectory)/List.cpp$(ObjectSuffix) $(IntermediateDirectory)/ListIterator.cpp$(ObjectSuffix) $(IntermediateDirectory)/TreeNode.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/Person.cpp$(ObjectSuffix) $(IntermediateDirectory)/Student.cpp$(ObjectSuffix) $(IntermediateDirectory)/Expression.cpp$(ObjectSuffix) $(IntermediateDirectory)/NumberExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/BinaryExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/PlusExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/MinusExpression.cpp$(ObjectSuffix) 
+	$(IntermediateDirectory)/Person.cpp$(ObjectSuffix) $(IntermediateDirectory)/Student.cpp$(ObjectSuffix) $(IntermediateDirectory)/Expression.cpp$(ObjectSuffix) $(IntermediateDirectory)/NumberExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/BinaryExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/PlusExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/MinusExpression.cpp$(ObjectSuffix) $(IntermediateDirectory)/Employee.cpp$(ObjectSuffix) $(IntermediateDirectory)/StudentAssistant.cpp$(ObjectSuffix) $(IntermediateDirectory)/C.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/maximum.cpp$(ObjectSuffix) $(IntermediateDirectory)/C2.cpp$(ObjectSuffix) 
 
 
 
@@ -228,6 +229,46 @@ $(IntermediateDirectory)/MinusExpression.cpp$(DependSuffix): MinusExpression.cpp
 
 $(IntermediateDirectory)/MinusExpression.cpp$(PreprocessSuffix): MinusExpression.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/MinusExpression.cpp$(PreprocessSuffix) MinusExpression.cpp
+
+$(IntermediateDirectory)/Employee.cpp$(ObjectSuffix): Employee.cpp $(IntermediateDirectory)/Employee.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/Employee.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Employee.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Employee.cpp$(DependSuffix): Employee.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Employee.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Employee.cpp$(DependSuffix) -MM Employee.cpp
+
+$(IntermediateDirectory)/Employee.cpp$(PreprocessSuffix): Employee.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Employee.cpp$(PreprocessSuffix) Employee.cpp
+
+$(IntermediateDirectory)/StudentAssistant.cpp$(ObjectSuffix): StudentAssistant.cpp $(IntermediateDirectory)/StudentAssistant.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/StudentAssistant.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/StudentAssistant.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/StudentAssistant.cpp$(DependSuffix): StudentAssistant.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/StudentAssistant.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/StudentAssistant.cpp$(DependSuffix) -MM StudentAssistant.cpp
+
+$(IntermediateDirectory)/StudentAssistant.cpp$(PreprocessSuffix): StudentAssistant.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/StudentAssistant.cpp$(PreprocessSuffix) StudentAssistant.cpp
+
+$(IntermediateDirectory)/C.cpp$(ObjectSuffix): C.cpp $(IntermediateDirectory)/C.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/C.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/C.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/C.cpp$(DependSuffix): C.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/C.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/C.cpp$(DependSuffix) -MM C.cpp
+
+$(IntermediateDirectory)/C.cpp$(PreprocessSuffix): C.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/C.cpp$(PreprocessSuffix) C.cpp
+
+$(IntermediateDirectory)/maximum.cpp$(ObjectSuffix): maximum.cpp $(IntermediateDirectory)/maximum.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/maximum.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/maximum.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/maximum.cpp$(DependSuffix): maximum.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/maximum.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/maximum.cpp$(DependSuffix) -MM maximum.cpp
+
+$(IntermediateDirectory)/maximum.cpp$(PreprocessSuffix): maximum.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/maximum.cpp$(PreprocessSuffix) maximum.cpp
+
+$(IntermediateDirectory)/C2.cpp$(ObjectSuffix): C2.cpp $(IntermediateDirectory)/C2.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/cppp/CPPP-Workspace/CPPLab/1/C2.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/C2.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/C2.cpp$(DependSuffix): C2.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/C2.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/C2.cpp$(DependSuffix) -MM C2.cpp
+
+$(IntermediateDirectory)/C2.cpp$(PreprocessSuffix): C2.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/C2.cpp$(PreprocessSuffix) C2.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

@@ -2,6 +2,7 @@
 #include "List.h"
 #include "ListItem.h"
 
+#ifdef DEBUG_
 ListIterator::ListIterator(List *list, ListItem *item):
 list(list),
 item(item)
@@ -65,3 +66,5 @@ ListIterator ListIterator::operator--(int){
 	}
 	return iter; // return copy to previous item
 }
+
+#endif //DEBUG_

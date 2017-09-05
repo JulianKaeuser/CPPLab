@@ -1,9 +1,9 @@
 #include "Vector3.h"
 
-Vector3::Vector3()
-{
-}
-
+//Vector3::Vector3()
+//{
+//}
+/*
 Vector3::Vector3(double a, double b, double c):
 a(a),
 b(b),
@@ -27,7 +27,7 @@ Vector3 Vector3::operator+(Vector3 rhs){
 	 Vector3 reVec(a+rhs.a, b+rhs.b, c+rhs.c);
 	 return reVec;
 };
-
+*
 Vector3 Vector3::operator-(Vector3 rhs){
 	Vector3 reVec(a-rhs.a, b-rhs.b, c-rhs.c);
 	 return reVec;
@@ -38,10 +38,10 @@ double Vector3::operator*(Vector3 rhs){
 	return a*rhs.a+b*rhs.b+c*rhs.c;
 }; 
 
-std::ostream& operator<<(std::ostream &out, Vector3 rhs) {
+std::ostream& Vector3::operator<<(std::ostream &out, Vector3 rhs) {
 out << rhs.a << rhs.b << rhs.c ;
 return out;
 };
-
+*/
 
 

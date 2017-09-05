@@ -1,5 +1,7 @@
 #include "ListItem.h"
 
+#ifndef LISTITEM_TPP_
+
 ListItem::ListItem(ListItem* prev, ListItem* next, int content):
 content(content),
 previous(prev),
@@ -39,3 +41,5 @@ ListItem* ListItem::getNext(){
 ListItem* ListItem::getPrevious(){
 	return this->previous;
 }
+
+#endif //LISTITEM_TPP

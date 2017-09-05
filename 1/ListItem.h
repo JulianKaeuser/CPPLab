@@ -2,14 +2,14 @@
 #define LISTITEM_H
 
 #include <iostream>
-
+template<typename T>
 class ListItem
 {
 public:
-	ListItem(ListItem *prev, ListItem *next, int content);
+	ListItem(ListItem *prev, ListItem *next, T content);
 	
 	~ListItem();
-	int& getContent();
+	T& getContent();
 	ListItem* getNext();
 	ListItem* getPrevious();
 	
@@ -17,9 +17,11 @@ private:
     ListItem(const ListItem &other); // no impl
     ListItem *previous;
 	ListItem *next;
-    int content;
+    T content;
 	ListItem& operator=(const ListItem &other); // no impl
 
 };
+
+#include "ListItem.tpp"
 
 #endif // LISTITEM_H

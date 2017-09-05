@@ -1,7 +1,9 @@
+#ifdef DEBUG_
 #ifndef LISTITERATOR_H
 #define LISTITERATOR_H
 //#include "List.h"
 //#include "ListItem.h"
+
 
 class ListItem;
 class List;
@@ -25,3 +27,4 @@ private:
 };
 
 #endif // LISTITERATOR_H
+#endif // DEBUG_

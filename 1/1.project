@@ -36,6 +36,19 @@
     <File Name="PlusExpression.cpp"/>
     <File Name="MinusExpression.h"/>
     <File Name="MinusExpression.cpp"/>
+    <File Name="Employee.h"/>
+    <File Name="Employee.cpp"/>
+    <File Name="StudentAssistant.h"/>
+    <File Name="StudentAssistant.cpp"/>
+    <File Name="C.h"/>
+    <File Name="C.cpp"/>
+    <File Name="maximum.h"/>
+    <File Name="maximum.cpp"/>
+    <File Name="C2.h"/>
+    <File Name="C2.cpp"/>
+    <File Name="Vector3.tpp"/>
+    <File Name="ListItem.tpp"/>
+    <File Name="List.tpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
