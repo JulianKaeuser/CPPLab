@@ -161,7 +161,7 @@ void List<T>::deleteAt(const size_t pos){
 
 template<typename T>
 std::ostream& operator<<(std::ostream& out, const List<T> &list) {
-	for (ListIterator<T> *iter = list.begin(); iter!=list.end(); iter++){
+	for (ListIterator<T> iter = list.begin(); iter!=list.end(); iter++){
 		out << *iter;
 	}
 	return out;
@@ -169,13 +169,13 @@ std::ostream& operator<<(std::ostream& out, const List<T> &list) {
 
 
 template<typename T>	
-ListIterator<T> List<T>::begin(){
-	ListIterator<T> iter = new ListIterator<T>(this, first);
+ListIterator<T> List<T>::begin() const{
+	ListIterator<T> iter(this, first);
 	return iter;
 	}
 template<typename T>	
-ListIterator<T> List<T>::end(){
-	ListIterator<T> iter = new ListIterator<T>(this, last);
+ListIterator<T> List<T>::end() const{
+	ListIterator<T> iter(this, last);
 	return iter;
 	}
 

@@ -8,7 +8,7 @@ template<typename T>
 class ListIterator
 {
 public:
-	ListIterator(List<T> *list, ListItem<T> *item);
+	ListIterator(List<T> const *list, ListItem<T> *item);
 	~ListIterator();
 	T& operator*();
 	bool operator!=(const ListIterator<T> &other) const;
@@ -18,7 +18,7 @@ public:
 	ListIterator<T> operator--(int); //postfix --
 
 private:
-    List<T> *list;
+    List<T> const *list;
 	ListItem<T> *item;
 
 };

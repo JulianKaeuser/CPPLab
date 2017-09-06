@@ -16,8 +16,15 @@
 #include "C.h"
 #include "maximum.h"
 #include "C2.h"
+#include "A16.h"
+#include <vector>
+#include <list>
+#include <algorithm>
 using namespace std;
 
+bool lt (int lhs){
+	return A16::lessThan(lhs, 4);
+}
 
 void foo(int &i) {
 int i2 = i;
@@ -79,7 +86,7 @@ cout << "/A6-6"<< endl;
 	
 	
 //A7)
-/*
+
 //A7.4)
 cout << "A7-4"<<endl;
 List *list = new List();
@@ -225,6 +232,7 @@ cout << "/A12-2" << endl;
 */
 
 //A13
+/*
 C2 a(5);
 //
 C2 b(7);
@@ -244,10 +252,28 @@ for (int ii =1; ii<33; ii*=2){
 	cout<< ii << endl;
 }
 
-cout << "list: " << &listP << endl;;
+cout << "list: " << listP << endl;;
 
 cout << "/A15-3" << endl;
 
+ * */
+// A16
+cout << "A16-1" << endl;
+int a[] = {1, 2, 3, 4, 5, 16, 37};
+vector<int> v(a, a+(sizeof(a)/sizeof(int)));
+A16::print(v);
+
+
+std::list<int> myList(++v.begin(), v.begin()+=4);
+myList.insert( myList.begin(),*--v.end());
+v.clear();
+A16::print(v);
+cout << endl;
+
+A16::print(myList);
+remove_copy_if(myList.begin(), myList.end(), std::back_inserter(v), lt);
+cout << endl;
+cout << "/A16-1" << endl;
 	
 // A5)	
 /*
@@ -291,8 +317,7 @@ cout << "Wert von &pIntVal " << &pIntVal << endl;
 	
 	
 	
-	
-/*	
+
 //std::cout << "Hello World" << std::endl; // prints "Hello World"
 std::cout << "int:" 	<< sizeof(int)	<< std::endl;
 std::cout << "uint:" 	<< sizeof(unsigned int)	<< std::endl;

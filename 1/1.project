@@ -50,6 +50,8 @@
     <File Name="ListItem.tpp"/>
     <File Name="List.tpp"/>
     <File Name="ListIterator.tpp"/>
+    <File Name="A16.h"/>
+    <File Name="A16.tpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

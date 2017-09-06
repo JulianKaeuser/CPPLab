@@ -2,6 +2,21 @@
 #define LISTITERATOR_TPP_
 #include "ListIterator.h"
 
+
+template<typename T>
+ListIterator<T>::ListIterator(List<T> const *list, ListItem<T> *item):
+list(list),
+item(item)
+{
+
+}
+
+template<typename T>
+ListIterator<T>::~ListIterator()
+{
+}
+
+
 template<typename T>
 T& ListIterator<T>::operator*(){
 	return (item->getContent());
