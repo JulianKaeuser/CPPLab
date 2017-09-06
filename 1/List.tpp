@@ -27,7 +27,7 @@ void List<T>::appendElement (const T &i){
 	ListItem<T> *it;
 	//std::cout << last << std::endl;
 	it = new ListItem<T>(last, 0, i);
-	std::cout << "it:" << it->getContent() << std::endl;
+	//std::cout << "it:" << it->getContent() << std::endl;
 	last = it;
 	
 	if (first==0){
@@ -161,7 +161,7 @@ void List<T>::deleteAt(const size_t pos){
 
 template<typename T>
 std::ostream& operator<<(std::ostream& out, const List<T> &list) {
-	for (ListIterator<T> iter = list.begin(); iter!=list.end(); iter++){
+	for (ListIterator<T> *iter = list.begin(); iter!=list.end(); iter++){
 		out << *iter;
 	}
 	return out;

@@ -9,6 +9,9 @@ class List;
 #include "ListIterator.h"
 
 template<typename T>
+std::ostream& operator<< (std::ostream& os, const List<T>& list);
+
+template<typename T>
 class List
 {
 friend class ListIterator<T>;
@@ -28,7 +31,7 @@ public:
 	void deleteAt(const size_t pos);
 	ListIterator<T> begin();
 	ListIterator<T> end();
-	//std::ostream& operator<<(std::ostream& out) const;
+	friend std::ostream& operator<< <> (std::ostream& out, const List<T> &list);
 private:
    ListItem<T> *first;
    ListItem<T> *last;
@@ -37,7 +40,8 @@ private:
 
 
 };
-template<typename T>
-std::ostream& operator<<(std::ostream&, const List<T>&);
+
+//template<typename T>
+//std::ostream& operator<<(std::ostream&, const List<T>&);
 #include "List.tpp"
 #endif // LIST_H

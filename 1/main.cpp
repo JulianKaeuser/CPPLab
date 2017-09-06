@@ -236,13 +236,15 @@ cout << "max:" << c<< endl;
 //A15
 //A15-3
 cout << "A15-3" << endl;
-List<int> *listP = new List<int>();
+List<int> listP;
 
 for (int ii =1; ii<33; ii*=2){
-	int *a = &ii;
-	listP->appendElement(*a);
+	int a = ii;
+	listP.appendElement(a);
+	cout<< ii << endl;
 }
-cout << "list: " << listP << endl;;
+
+cout << "list: " << &listP << endl;;
 
 cout << "/A15-3" << endl;
 
