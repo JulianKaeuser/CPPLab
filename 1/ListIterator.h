@@ -1,30 +1,28 @@
-#ifdef DEBUG_
 #ifndef LISTITERATOR_H
 #define LISTITERATOR_H
 //#include "List.h"
-//#include "ListItem.h"
+#include "ListItem.h"
+template<typename T> class List;
 
-
-class ListItem;
-class List;
-
+template<typename T>
 class ListIterator
 {
 public:
-	ListIterator(List *list, ListItem *item);
+	ListIterator(List<T> *list, ListItem<T> *item);
 	~ListIterator();
-	int& operator*();
-	bool operator!=(const ListIterator &other) const;
-	ListIterator& operator++(); //prefix ++
-	ListIterator operator++(int); // postfix ++
-	ListIterator& operator--(); //prefix --
-	ListIterator operator--(int); //postfix --
+	T& operator*();
+	bool operator!=(const ListIterator<T> &other) const;
+	ListIterator<T>& operator++(); //prefix ++
+	ListIterator<T> operator++(int); // postfix ++
+	ListIterator<T>& operator--(); //prefix --
+	ListIterator<T> operator--(int); //postfix --
 
 private:
-    List *list;
-	ListItem *item;
+    List<T> *list;
+	ListItem<T> *item;
 
 };
+#include "ListIterator.tpp"
 
 #endif // LISTITERATOR_H
-#endif // DEBUG_
+

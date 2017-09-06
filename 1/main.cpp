@@ -233,6 +233,18 @@ C2 d = maximum(a, b);
 int c = d.getNumber();
 cout << "max:" << c<< endl;
 
+//A15
+//A15-3
+cout << "A15-3" << endl;
+List<int> *listP = new List<int>();
+
+for (int ii =1; ii<33; ii*=2){
+	int *a = &ii;
+	listP->appendElement(*a);
+}
+cout << "list: " << listP << endl;;
+
+cout << "/A15-3" << endl;
 
 	
 // A5)	

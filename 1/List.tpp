@@ -25,7 +25,7 @@ template<typename T>
 void List<T>::appendElement (const T &i){
 	currentSize++;
 	ListItem<T> *it;
-	std::cout << last << std::endl;
+	//std::cout << last << std::endl;
 	it = new ListItem<T>(last, 0, i);
 	std::cout << "it:" << it->getContent() << std::endl;
 	last = it;
@@ -34,8 +34,8 @@ void List<T>::appendElement (const T &i){
 		first = it;
 		last = it;
 	}
-	std::cout << "last: " <<last << " - " <<last->getContent() << std::endl;
-	std::cout << "first:" <<first << " - " <<first->getContent() << std::endl;
+	//std::cout << "last: " <<last << " - " <<last->getContent() << std::endl;
+	//std::cout << "first:" <<first << " - " <<first->getContent() << std::endl;
 
 }
 
@@ -159,10 +159,24 @@ void List<T>::deleteAt(const size_t pos){
 	currentSize--;
 }
 
-/*
+template<typename T>
+std::ostream& operator<<(std::ostream& out, const List<T> &list) {
+	for (ListIterator<T> iter = list.begin(); iter!=list.end(); iter++){
+		out << *iter;
+	}
+	return out;
+}
+
+
 template<typename T>	
-ListIterator List<T>::begin(){}
+ListIterator<T> List<T>::begin(){
+	ListIterator<T> iter = new ListIterator<T>(this, first);
+	return iter;
+	}
 template<typename T>	
-ListIterator List<T>::end(){}
-*/	
+ListIterator<T> List<T>::end(){
+	ListIterator<T> iter = new ListIterator<T>(this, last);
+	return iter;
+	}
+
 #endif // LIST_TPP_

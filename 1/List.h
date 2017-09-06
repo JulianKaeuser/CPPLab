@@ -1,6 +1,8 @@
 #ifndef LIST_H
 #define LIST_H
 
+template<typename T>
+class List;
 #include <iostream>
 #include "ListItem.h"
 #include <cstddef>
@@ -9,8 +11,7 @@
 template<typename T>
 class List
 {
-friend class ListIterator;	
-
+friend class ListIterator<T>;
 public:
 	List();
 	~List();
@@ -25,17 +26,18 @@ public:
 	void deleteFirst();
 	void deleteLast();
 	void deleteAt(const size_t pos);
-	//ListIterator begin();
-	//ListIterator end();
+	ListIterator<T> begin();
+	ListIterator<T> end();
+	//std::ostream& operator<<(std::ostream& out) const;
 private:
    ListItem<T> *first;
    ListItem<T> *last;
    size_t currentSize;
    ListItem<T> *getElementAt(size_t pos);
 
-friend std::ostream& operator<<(std::ostream&, List&);
-};
 
+};
+template<typename T>
+std::ostream& operator<<(std::ostream&, const List<T>&);
 #include "List.tpp"
-//std::ostream &operator<<(std::ostream &stream, List &list);
 #endif // LIST_H

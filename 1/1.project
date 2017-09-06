@@ -49,6 +49,7 @@
     <File Name="Vector3.tpp"/>
     <File Name="ListItem.tpp"/>
     <File Name="List.tpp"/>
+    <File Name="ListIterator.tpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

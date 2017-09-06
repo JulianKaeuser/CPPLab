@@ -1,33 +1,22 @@
-#include "ListIterator.h"
 #ifndef LISTITERATOR_TPP_
+#define LISTITERATOR_TPP_
+#include "ListIterator.h"
 
-#include "List.h"
-#include "ListItem.h"
-
-
-ListIterator::ListIterator(List *list, ListItem *item):
-list(list),
-item(item)
-{
-
-}
-
-ListIterator::~ListIterator()
-{
-}
-
-ínt& ListIterator::operator*(){
+template<typename T>
+T& ListIterator<T>::operator*(){
 	return (item->getContent());
 }
 
-bool ListIterator::operator!=(const ListIterator &other) const{
+template<typename T>
+bool ListIterator<T>::operator!=(const ListIterator<T> &other) const{
 	if ((other.list != list) || (other.item!=item)){
 		return 1;
 	}
 	return 0;
 }
 
-ListIterator& ListIterator::operator ++(){
+template<typename T>
+ListIterator<T>& ListIterator<T>::operator ++(){
 	if (item==0){
 		item = list->first;
 	}
@@ -37,8 +26,9 @@ ListIterator& ListIterator::operator ++(){
 	return *this;
 }
 
-ListIterator ListIterator::operator++(int){
-	ListIterator iter(list, item); // store current iterator
+template<typename T>
+ListIterator<T> ListIterator<T>::operator++(int){
+	ListIterator<T> iter(list, item); // store current iterator
 	if (item ==0){
 		item = list->first;
 	}
@@ -48,7 +38,8 @@ ListIterator ListIterator::operator++(int){
 	return iter; // return copy to previous item
 }
 
-ListIterator& ListIterator::operator --(){
+template<typename T>
+ListIterator<T>& ListIterator<T>::operator --(){
 	if (item==0){
 		item = list->last;
 	}
@@ -58,8 +49,9 @@ ListIterator& ListIterator::operator --(){
 	return *this;
 }
 
-ListIterator ListIterator::operator--(int){
-	ListIterator iter(list, item); //store current iterator
+template<typename T>
+ListIterator<T> ListIterator<T>::operator--(int){
+	ListIterator<T> iter(list, item); //store current iterator
 	if (item ==0){
 		item = list->last;
 	}
@@ -68,6 +60,5 @@ ListIterator ListIterator::operator--(int){
 	}
 	return iter; // return copy to previous item
 }
-
 
 #endif //LISTITERATOR_TPP_
